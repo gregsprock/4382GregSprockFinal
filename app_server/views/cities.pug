@@ -6,7 +6,7 @@ block content
             .container
                 .row
                 .col
-                    h1.text-center City
+                    h1.text-center City Weather
                     form(action='/selectedCity', method='POST')
                         select(name='selectedCity')
                             each city in citiesList
@@ -18,15 +18,18 @@ block content
                         table.table.table-sm.table-hover
                             thead
                                 tr
-                                    th City
-                                    th Departure
-                                    th Arrival
-                                    th Logon Time
+                                    th Date/Time
+                                    th Summary
+                                    th Temp
+                                    th Rain
+                                    th Wind
                             tbody
                                 each city in cities
                                     tr
-                                        td #{city.city}
+                                        - var myDate = new Date(forecast.time*1000); number = (myDate.toGMTString());
                                         td #{city.time}
                                         td #{city.summary}
-                                        td #{city.rain}
+                                        td #{city.temp} C
+                                        td #{city.rain} In.
+                                        td #{city.wind} MPH
 
