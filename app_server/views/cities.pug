@@ -26,8 +26,8 @@ block content
                             tbody
                                 each city in cities
                                     tr
-                                        //- - var myDate = new Date(forecast.time*1000); number = (myDate.toGMTString());
-                                        td #{city.time}
+                                        - var myDate = new Date(city.time*1000); number = (myDate.toGMTString());
+                                        td #{number}
                                         td #{city.summary}
                                         td #{city.temp} C
                                         td #{city.rain} In.
