@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    .row
+        .col-12.col-md-8
+            .container
+                .row
+                .col
+                    h1.text-center City
+                    form(action='/selectedCity', method='POST')
+                        select(name='selectedCity')
+                            each city in citiesList
+                                option(value=city) #{city}
+                        input(type='submit', value='Submit')
+                .row
+                    .col
+                        .table-responsive
+                        table.table.table-sm.table-hover
+                            thead
+                                tr
+                                    th City
+                                    th Departure
+                                    th Arrival
+                                    th Logon Time
+                            tbody
+                                each city in cities
+                                    tr
+                                        td #{city.city}
+                                        td #{city.time}
+                                        td #{city.summary}
+                                        td #{city.rain}
+
