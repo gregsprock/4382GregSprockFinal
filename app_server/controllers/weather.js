@@ -36,6 +36,7 @@ const selectMyCity = (req, res) => {
   const requestOptions = {
     url: `${apiOptions.server}${path}`,
     method: 'GET',
+    Json: {},
   };
   request(
     requestOptions,

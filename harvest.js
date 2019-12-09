@@ -15,7 +15,7 @@ const getWeather = (url, city) => {
 
     console.log(url);
     console.log(city);
-    
+
     axios.get(url)
         .then((response) => {
 
@@ -55,13 +55,13 @@ const task = cron.schedule('* * * * *', () => {
             lat: 35.2220,
             long: 101.8313
         },
-            
+
         {
             city: "Lubbock",
             lat: 33.5779,
             long: 101.8552
         },
-            
+
         {
             city: "Midland",
             lat: 31.9973,
